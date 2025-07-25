@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Lista de Máquinas</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Localizacação</th>
+        <th>Status atual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let maquina of maquinas">
+        <td>{{ maquina.nome }}</td>
+        <td>{{ maquina.localizacao }}</td>
+        <td>{{ maquina.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="erro" class="error-message">
+    {{ erro }}
+  </div>
+</div>
