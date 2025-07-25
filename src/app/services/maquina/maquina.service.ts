@@ -7,7 +7,7 @@ import { Maquina } from '../../shared/models/maquina.model';
   providedIn: 'root'
 })
 export class MaquinaService {
-  private apiUrl = 'http://localhost:3000/machines';
+  private apiUrl = 'http://localhost:3000/maquinas';
 
   constructor(
     private http: HttpClient
