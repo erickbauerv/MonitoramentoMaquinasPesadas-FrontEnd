@@ -1,6 +1,16 @@
 <div class="container">
   <h2>Lista de Máquinas</h2>
 
+  <div>
+    <label>Filtrar por Status:</label>
+    <select [(ngModel)]="filtroStatusMaquina" (change)="onStatusChange()">
+      <option value="">Todos</option>
+      <option value="operando">Operando</option>
+      <option value="manutencao">Manutenção</option>
+      <option value="desligada">Desligada</option>
+    </select>
+  </div>
+
   <table>
     <thead>
       <tr>

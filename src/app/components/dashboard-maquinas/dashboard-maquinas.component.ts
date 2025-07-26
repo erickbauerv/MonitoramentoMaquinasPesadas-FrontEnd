@@ -25,13 +25,17 @@ export class DashboardMaquinasComponent {
 
   carregarMaquinas(): void {
     this.maquinaService.getMaquinas(this.filtroStatusMaquina).subscribe({
-      next: (maquinas: Maquina[]) => {
-        this.maquinas = maquinas;
+      next: (response: Maquina[]) => {
+        this.maquinas = response;
       },
       error: (err) => {
         console.error('Erro ao carregar máquinas: ', err);
         this.maquinas = [];
       }
     })
+  }
+
+  onStatusChange() {
+    this.carregarMaquinas();
   }
 }
