@@ -1,25 +1,160 @@
+/* Estilos gerais */
 .details-container {
-  max-width: 600px;
-  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px);
   padding: 20px;
+  background-color: #f5f7fa;
+}
+
+.details-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Cabeçalho */
+.details-header {
+  border-bottom: 1px solid #e1e5eb;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.details-title {
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  font-size: 24px;
+}
+
+.machine-id {
+  color: #7f8c8d;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Conteúdo */
+.details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #34495e;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  color: #2c3e50;
+}
+
+/* Badges de status */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-operando {
+  background-color: #e3f7e8;
+  color: #2e7d32;
+}
+
+.status-manutencao {
+  background-color: #fff8e1;
+  color: #d84315;
+}
+
+.status-desligada {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Rodapé */
+.details-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e5eb;
+  gap: 15px;
+}
+
+.back-button,
+.edit-button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-button {
+  background-color: #f5f7fa;
+  color: #34495e;
   border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
-.detail-item {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 3px;
+.back-button:hover {
+  background-color: #e1e5eb;
 }
 
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #007bff;
-  text-decoration: none;
+.edit-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
 }
 
-.back-link:hover {
-  text-decoration: underline;
+.edit-button:hover {
+  background-color: #3a7bc8;
+}
+
+/* Ícones */
+.fas {
+  font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .details-card {
+    padding: 20px;
+  }
+  
+  .details-footer {
+    flex-direction: column;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .detail-label {
+    width: 100%;
+  }
 }

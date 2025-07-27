@@ -25,4 +25,13 @@ export class DetalhesMaquinaComponent {
       this.maquina = response;
     })
   }
+
+  getStatusText(status: string): string {
+    const statusMap: {[key: string]: string} = {
+      'operando': 'Operando',
+      'manutencao': 'Em Manutenção',
+      'desligada': 'Desligada'
+    };
+    return statusMap[status] || status;
+  }
 }

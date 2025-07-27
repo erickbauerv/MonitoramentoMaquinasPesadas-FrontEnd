@@ -1,34 +1,179 @@
+
+/* Estilos gerais */
 .container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
 }
 
-.container h2 {
-  color: #2d3748;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Filtro */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
   font-weight: 600;
+  color: #444;
 }
 
-table {
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Botões */
+.btn-primary {
+  padding: 8px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #3a7bc8;
+}
+
+.btn-details {
+  color: #4a90e2;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.btn-details:hover {
+  text-decoration: underline;
+}
+
+/* Tabela */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.machine-table {
   width: 100%;
   border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.machine-table th {
+  background-color: #f5f7fa;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #e1e5eb;
+}
+
+.machine-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e1e5eb;
+  vertical-align: middle;
+}
+
+.machine-table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Badges de status */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-operando {
+  background-color: #e3f7e8;
+  color: #2e7d32;
+}
+
+.status-manutencao {
+  background-color: #fff8e1;
+  color: #d84315;
+}
+
+.status-desligada {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Mensagem de erro */
+.error-message {
+  padding: 12px 16px;
+  background-color: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 20px;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+/* Ícones (usando Font Awesome) */
+.fas {
+  font-size: 14px;
 }
 
-th {
-  background-color: #f2f2f2;
-}
-
-select {
-  padding: 5px;
-  margin-left: 10px;
+/* Responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .machine-table {
+    font-size: 14px;
+  }
+  
+  .machine-table th, 
+  .machine-table td {
+    padding: 8px 10px;
+  }
 }

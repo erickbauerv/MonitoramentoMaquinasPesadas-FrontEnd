@@ -1,37 +1,55 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <div class="container">
-  <h2>Lista de Máquinas</h2>
-
-  <div>
-    <label>Filtrar por Status:</label>
-    <select [(ngModel)]="filtroStatusMaquina" (change)="onStatusChange()">
-      <option value="">Todos</option>
-      <option value="operando">Operando</option>
-      <option value="manutencao">Manutenção</option>
-      <option value="desligada">Desligada</option>
-    </select>
+  <div class="header">
+    <h2>Lista de Máquinas</h2>
+    
+    <div class="controls">
+      <div class="filter-group">
+        <label for="status-filter">Filtrar por Status:</label>
+        <select id="status-filter" [(ngModel)]="filtroStatusMaquina" (change)="onStatusChange()">
+          <option value="">Todos</option>
+          <option value="operando">Operando</option>
+          <option value="manutencao">Manutenção</option>
+          <option value="desligada">Desligada</option>
+        </select>
+      </div>
+      
+      <button class="btn-primary" (click)="goToCadastroMaquina()">
+        <i class="fas fa-plus"></i> Cadastrar máquina
+      </button>
+    </div>
   </div>
 
-  <button class='button' (click)="goToCadastroMaquina()">Cadastrar máquina</button>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Localizacação</th>
-        <th>Status atual</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let maquina of maquinas">
-        <td>{{ maquina.nome }}</td>
-        <td>{{ maquina.localizacao }}</td>
-        <td>{{ maquina.status }}</td>
-        <td><a [routerLink]="['/maquina', maquina.id]">Detalhes</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table class="machine-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Localização</th>
+          <th>Status atual</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let maquina of maquinas">
+          <td>{{ maquina.nome }}</td>
+          <td>{{ maquina.localizacao }}</td>
+          <td>
+            <span class="status-badge status-{{ maquina.status }}">
+              {{ maquina.status }}
+            </span>
+          </td>
+          <td>
+            <a class="btn-details" [routerLink]="['/maquina', maquina.id]">
+              <i class="fas fa-eye"></i> Detalhes
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <div *ngIf="erro" class="error-message">
-    {{ erro }}
+    <i class="fas fa-exclamation-circle"></i> {{ erro }}
   </div>
 </div>
