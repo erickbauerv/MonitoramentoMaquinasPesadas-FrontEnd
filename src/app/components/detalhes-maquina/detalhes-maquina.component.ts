@@ -3,15 +3,16 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Maquina } from '../../shared/models/maquina.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-detalhes-maquina',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './detalhes-maquina.component.html',
   styleUrl: './detalhes-maquina.component.css'
 })
 export class DetalhesMaquinaComponent {
-  maquina: any;
+  maquina: Maquina = { nome: '', localizacao: '', status: 'desligada'};
 
   constructor(
     private route: ActivatedRoute,

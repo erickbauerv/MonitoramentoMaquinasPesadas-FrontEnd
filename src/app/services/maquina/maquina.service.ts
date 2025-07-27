@@ -19,7 +19,7 @@ export class MaquinaService {
   }
 
   getMaquina(id: number): Observable<Maquina> {
-    return this.http.get<Maquina>(`${this.apiUrl}?id=${id}`);
+    return this.http.get<Maquina>(`${this.apiUrl}/${id}`);
   }
 
   createMaquina(maquina: Maquina) {
