@@ -1,1 +1,5 @@
-<p>cadastro-maquinas works!</p>
+<h2>Adicionar produto</h2>
+<input type="text" [(ngModel)]="novaMaquina.nome" placeholder="Nome da máquina">
+<input type="text" [(ngModel)]="novaMaquina.localizacao" placeholder="Lozalização da máquina">
+<input type="text" [(ngModel)]="novaMaquina.status" placeholder="Status da máquina">
+<button (click)="adicionarMaquina()">Cadastrar</button>

@@ -17,4 +17,16 @@ export class MaquinaService {
     const urlFiltro = status ? `${this.apiUrl}?status=${status}` : this.apiUrl;
     return this.http.get<Maquina[]>(urlFiltro);
   }
+
+  getMaquina(id: number): Observable<Maquina> {
+    return this.http.get<Maquina>(`${this.apiUrl}/${id}`);
+  }
+
+  createMaquina(maquina: Maquina) {
+    return this.http.post(this.apiUrl, maquina);
+  }
+
+  updateMaquina(id: number, maquina: Maquina) {
+    return this.http.put(`${this.apiUrl}/${id}`, maquina);
+  }
 }

@@ -3,6 +3,7 @@ import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Maquina } from '../../shared/models/maquina.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-maquinas',
@@ -16,7 +17,8 @@ export class DashboardMaquinasComponent {
   erro: string = '';
 
   constructor(
-    public maquinaService: MaquinaService
+    private maquinaService: MaquinaService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +39,9 @@ export class DashboardMaquinasComponent {
 
   onStatusChange() {
     this.carregarMaquinas();
+  }
+
+  goToCadastroMaquina(){
+    this.router.navigate(['/cadastro']);
   }
 }
