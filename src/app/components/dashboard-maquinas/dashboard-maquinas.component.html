@@ -26,6 +26,7 @@
         <td>{{ maquina.nome }}</td>
         <td>{{ maquina.localizacao }}</td>
         <td>{{ maquina.status }}</td>
+        <td><a [routerLink]="['/maquina', maquina.id]">Detalhes</a></td>
       </tr>
     </tbody>
   </table>

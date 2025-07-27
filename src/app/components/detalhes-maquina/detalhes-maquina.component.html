@@ -1,1 +1,21 @@
-<p>detalhes-maquina works!</p>
+<div *ngIf="maquina" class="details-container">
+  <h2>Detalhes da Máquina</h2>
+  
+  <div class="detail-item">
+    <strong>ID:</strong> {{ maquina.id }}
+  </div>
+  
+  <div class="detail-item">
+    <strong>Nome:</strong> {{ maquina.nome }}
+  </div>
+  
+  <div class="detail-item">
+    <strong>Localização:</strong> {{ maquina.localizacao }}
+  </div>
+  
+  <div class="detail-item">
+    <strong>Status:</strong> {{ maquina.status }}
+  </div>
+  
+  <a routerLink="/" class="back-link">Voltar</a>
+</div>

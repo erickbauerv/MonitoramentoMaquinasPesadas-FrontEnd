@@ -6,6 +6,6 @@ import { DetalhesMaquinaComponent } from './components/detalhes-maquina/detalhes
 export const routes: Routes = [
     { path: 'dashboard', component: DashboardMaquinasComponent },
     { path: 'cadastro', component: CadastroMaquinasComponent },
-    { path: 'detalhes', component: DetalhesMaquinaComponent },
+    { path: 'maquina/:id', component: DetalhesMaquinaComponent },
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];

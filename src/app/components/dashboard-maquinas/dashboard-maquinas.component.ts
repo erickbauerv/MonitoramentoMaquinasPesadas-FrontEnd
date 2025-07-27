@@ -3,11 +3,11 @@ import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Maquina } from '../../shared/models/maquina.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-maquinas',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './dashboard-maquinas.component.html',
   styleUrl: './dashboard-maquinas.component.css'
 })
