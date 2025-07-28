@@ -138,6 +138,88 @@
   font-size: 14px;
 }
 
+/* Formulário de edição */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Ações de edição */
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-button {
+  padding: 10px 16px;
+  background-color: #f5f7fa;
+  color: #34495e;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cancel-button:hover {
+  background-color: #e1e5eb;
+}
+
+.save-button {
+  padding: 10px 16px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-button:hover {
+  background-color: #219653;
+}
+
+/* Ajuste para os botões na footer */
+.details-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   .details-card {

@@ -4,6 +4,7 @@ import { Maquina } from '../../shared/models/maquina.model';
 import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MaquinaCreateDto } from '../../shared/dto/maquinaCreate.dto';
 
 @Component({
   selector: 'app-cadastro-maquinas',
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CadastroMaquinasComponent {
   erro: string = '';
-  novaMaquina: Maquina = { nome: '', localizacao: '', status: 'desligada' }
+  novaMaquina: MaquinaCreateDto = { nome: '', localizacao: '', status: 'desligada' }
 
   constructor(
     private maquinaService: MaquinaService,

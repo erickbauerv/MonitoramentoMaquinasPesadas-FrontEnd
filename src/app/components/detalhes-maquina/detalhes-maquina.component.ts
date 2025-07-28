@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Maquina } from '../../shared/models/maquina.model';
 import { FormsModule } from '@angular/forms';
+import { MaquinaUpdateDto } from '../../shared/dto/maquinaUpdate.dto';
 
 @Component({
   selector: 'app-detalhes-maquina',
@@ -12,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './detalhes-maquina.component.css'
 })
 export class DetalhesMaquinaComponent {
-  maquina: Maquina = { nome: '', localizacao: '', status: 'desligada'};
+  maquina: Maquina = { id: 0, nome: '', localizacao: '', status: 'desligada'};
+  maquinaOriginal: Maquina = { id: 0, nome: '', localizacao: '', status: 'desligada'};
+  editMode = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,10 +23,37 @@ export class DetalhesMaquinaComponent {
   ){}
 
   ngOnInit(): void {
+    this.carregarMaquina();
+  }
+
+  carregarMaquina(){
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.maquinaService.getMaquina(id).subscribe(response => {
       this.maquina = response;
+      this.maquinaOriginal = {...response};
     })
+  }
+
+  ativarEdicao(): void {
+    this.editMode = true;
+  }
+
+  cancelarEdicao(): void {
+    this.editMode = false;
+    this.maquina = {...this.maquinaOriginal};
+  }
+
+  salvarEdicao(): void {
+    const maquinaUpdateDto: MaquinaUpdateDto = { nome: this.maquina.nome, localizacao: this.maquina.localizacao, status: this.maquina.status }
+    this.maquinaService.updateMaquina(this.maquina.id, maquinaUpdateDto).subscribe({
+      next: () => {
+        this.editMode = false;
+        this.maquinaOriginal = {...this.maquina};
+      },
+      error: (err) => {
+        console.error('Erro ao atualizar máquina: ', err);
+      }
+    });
   }
 
   getStatusText(status: string): string {
