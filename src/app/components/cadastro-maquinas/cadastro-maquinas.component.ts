@@ -31,7 +31,6 @@ export class CadastroMaquinasComponent {
       next: () => {
         this.novaMaquina = { nome: '', localizacao: '', status: 'desligada' }
         this.erro = '';
-        alert('Máquina cadastrada');
         this.goToDashboardMaquinas();
       },
       error: (err) => {
