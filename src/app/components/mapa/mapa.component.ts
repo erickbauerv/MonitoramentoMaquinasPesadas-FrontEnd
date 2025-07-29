@@ -5,7 +5,7 @@ import { Maquina } from '../../shared/models/maquina.model';
 
 // Configuração dos ícones
 const iconDefault = L.icon({
-  iconUrl: 'https://img.notionusercontent.com/s3/prod-files-secure%2F724cd7f4-29c5-4a23-96a3-133b93a401a9%2F73cf2945-9bc7-4db7-8877-9bf8097cbd45%2Fimage.png/size/w=2000?exp=1753829995&sig=9OP5mBqXGLkKyIxK8BVGNpZ4B_Di-7Ss--arQ4Uizes&id=23fd83f6-fecf-8073-b9ad-e9d885d817f5&table=block&userId=90e2ec9b-fc28-418e-9f04-20c8406e75ee',
+  iconUrl: 'https://img.icons8.com/?size=100&id=13800&format=png&color=000000',
   iconSize: [30, 30], 
   iconAnchor: [15, 30],
   popupAnchor: [0, -30] 
