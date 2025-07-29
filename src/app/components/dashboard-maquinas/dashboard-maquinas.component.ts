@@ -44,4 +44,8 @@ export class DashboardMaquinasComponent {
   goToCadastroMaquina(){
     this.router.navigate(['/cadastro']);
   }
+
+  goToMapa(){
+    this.router.navigate(['/mapa']);
+  }
 }
