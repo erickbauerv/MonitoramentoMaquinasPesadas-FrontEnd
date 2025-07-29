@@ -93,6 +93,16 @@
   font-size: 14px;
 }
 
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+input.ng-invalid {
+  border-color: #e74c3c;
+}
+
 /* Validação visual */
 input.ng-invalid.ng-touched,
 select.ng-invalid.ng-touched {

@@ -16,14 +16,19 @@
       </div>
       
       <div class="form-group">
-        <label for="localizacao">Localização</label>
+        <label for="localizacao">Localização (Latitude, Longitude)</label>
         <input 
           type="text" 
           id="localizacao" 
           [(ngModel)]="novaMaquina.localizacao" 
           name="localizacao"
-          placeholder="Ex: Canteiro de Obras A"
-          required>
+          placeholder="Ex: -15.7889, -47.8792"
+          required
+          (blur)="validarLocalizacao()">
+
+          <div *ngIf="erroLocalizacao" class="error-message">
+            {{ erroLocalizacao }}
+          </div>
       </div>
       
       <div class="form-group">

@@ -220,6 +220,16 @@
   align-items: center;
 }
 
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+input.ng-invalid {
+  border-color: #e74c3c;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   .details-card {

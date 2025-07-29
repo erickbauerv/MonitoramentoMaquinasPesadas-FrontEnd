@@ -37,7 +37,10 @@
         
         <div class="form-group">
           <label for="localizacao">Localização:</label>
-          <input type="text" id="localizacao" [(ngModel)]="maquina.localizacao" name="localizacao" required>
+          <input type="text" id="localizacao" [(ngModel)]="maquina.localizacao" name="localizacao" required (blur)="validarLocalizacao()">
+          <div *ngIf="erroLocalizacao" class="error-message">
+            {{ erroLocalizacao }}
+          </div>
         </div>
         
         <div class="form-group">

@@ -14,6 +14,7 @@ import { MaquinaCreateDto } from '../../shared/dto/maquinaCreate.dto';
 })
 export class CadastroMaquinasComponent {
   erro: string = '';
+  erroLocalizacao: string = '';
   novaMaquina: MaquinaCreateDto = { nome: '', localizacao: '', status: 'desligada' }
 
   constructor(
@@ -24,6 +25,12 @@ export class CadastroMaquinasComponent {
   adicionarMaquina(){
     if(!this.novaMaquina.nome || !this.novaMaquina.localizacao){
       this.erro = 'Preencha todos os campos corretamente!';
+      return;
+    }
+
+    this.validarLocalizacao();
+    if (this.erroLocalizacao) {
+      this.erro = 'Corrija os erros no formulário';
       return;
     }
 
@@ -43,5 +50,28 @@ export class CadastroMaquinasComponent {
 
   goToDashboardMaquinas(){
     this.router.navigate(['/dashboard']);
+  }
+
+  validarLocalizacao(): void {
+    this.erroLocalizacao = '';
+    
+    if (!this.novaMaquina.localizacao) {
+      return;
+    }
+
+    const regex = /^-?\d{1,3}\.\d{1,6},\s*-?\d{1,3}\.\d{1,6}$/;
+    
+    if (!regex.test(this.novaMaquina.localizacao)) {
+      this.erroLocalizacao = 'Formato inválido. Use: -12.345678, -34.567890';
+      return;
+    }
+
+    const [latStr, lngStr] = this.novaMaquina.localizacao.split(',').map(s => s.trim());
+    const lat = parseFloat(latStr);
+    const lng = parseFloat(lngStr);
+
+    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+      this.erroLocalizacao = 'Valores inválidos. Latitude (-90 a 90) e Longitude (-180 a 180)';
+    }
   }
 }
