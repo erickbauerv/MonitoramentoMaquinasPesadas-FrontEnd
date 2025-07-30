@@ -1,3 +1,5 @@
+# Monitoramento de Máquinas Pesadas - Front-End
+
 ### Sobre o projeto
 
 O projeto foi desenvolvido como parte do processo seletivo da Concert Technologies, o objetivo do projeto é desenvolver um sistema de monitoramento de máquinas pesadas utilizando telemetria, o front-end da aplicação foi desenvolvido com TypeScript e Angular, consumindo a API em https://github.com/erickbauerv/MonitoramentoDeMaquinasPesadas-backend.
