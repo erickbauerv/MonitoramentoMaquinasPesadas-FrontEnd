@@ -53,7 +53,7 @@ export class DetalhesMaquinaComponent {
       return;
     }
 
-    const maquinaUpdateDto: MaquinaUpdateDto = { nome: this.maquina.nome, localizacao: this.maquina.localizacao, status: this.maquina.status }
+    const maquinaUpdateDto: MaquinaUpdateDto = { localizacao: this.maquina.localizacao, status: this.maquina.status }
     this.maquinaService.updateMaquina(this.maquina.id, maquinaUpdateDto).subscribe({
       next: () => {
         this.editMode = false;

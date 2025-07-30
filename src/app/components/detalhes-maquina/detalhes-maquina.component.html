@@ -32,7 +32,7 @@
       <form *ngIf="editMode" (ngSubmit)="salvarEdicao()" class="edit-form" id="editForm">
         <div class="form-group">
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" [(ngModel)]="maquina.nome" name="nome" required>
+          <input type="text" id="nome" [(ngModel)]="maquina.nome" name="nome" disabled>
           <div *ngIf="erroNome" class="error-message">
             {{ erroNome }}
           </div>
