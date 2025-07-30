@@ -16,7 +16,7 @@ Na tela de mapa interativo é exibido um mapa mundi com ícones marcando onde as
 
 ### Instalação do projeto
 
-1 - Pré-requisitos: Node: https://nodejs.org/en/download , git: https://git-scm.com/downloads,  Angular: https://angular.dev/tools/cli/setup-local (npm install -g @angular/cli)
+1 - Pré-requisitos: Node: https://nodejs.org/en/download , git: https://git-scm.com/downloads,  Angular: https://angular.dev/tools/cli/setup-local
 
 2 - Clonar o repositório com `git clone https://github.com/erickbauerv/MonitoramentoMaquinasPesadas-FrontEnd.git`
 
