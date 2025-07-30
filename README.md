@@ -23,3 +23,7 @@ Na tela de mapa interativo é exibido um mapa mundi com ícones marcando onde as
 3 - Para rodar a aplicação utilizar o comando `ng serve` ou `ng serve —open` para abrir direto no navegador
 
 4 - A aplicação estará disponível em  [http://localhost:4200](http://localhost:4200/)
+
+### Observações
+
+Para testar o preenchimento da Localização (Coordenadas) de uma máquina recomendo utilizar o Google Map https://www.google.com.br/maps?hl=pt-BR, ao clicar com o botão direito do mouse em algum local no Google Maps é possível copiar facilmente as coordenados do local.
