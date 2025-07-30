@@ -16,13 +16,15 @@ Na tela de mapa interativo é exibido um mapa mundi com ícones marcando onde as
 
 ### Instalação do projeto
 
-1 - Clonar o repositório com `git clone https://github.com/erickbauerv/MonitoramentoMaquinasPesadas-FrontEnd.git`
+1 - Pré-requisitos: Node: https://nodejs.org/en/download , git: https://git-scm.com/downloads,  Angular: https://angular.dev/tools/cli/setup-local (npm install -g @angular/cli)
 
-2 - Na pasta do projeto rodar o comando `npm install` para instalar as dependências do projeto
+2 - Clonar o repositório com `git clone https://github.com/erickbauerv/MonitoramentoMaquinasPesadas-FrontEnd.git`
 
-3 - Para rodar a aplicação utilizar o comando `ng serve` ou `ng serve —open` para abrir direto no navegador
+3 - Na pasta do projeto rodar o comando `npm install` para instalar as dependências do projeto
 
-4 - A aplicação estará disponível em  [http://localhost:4200](http://localhost:4200/)
+4 - Para rodar a aplicação utilizar o comando `ng serve` ou `ng serve —open` para abrir direto no navegador
+
+5 - A aplicação estará disponível em  [http://localhost:4200](http://localhost:4200/)
 
 ### Observações
 
