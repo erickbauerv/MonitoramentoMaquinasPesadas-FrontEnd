@@ -58,10 +58,31 @@ export class MapaComponent implements AfterViewInit {
       if(maquina.localizacao) {
         const coords = this.parseCoordenadas(maquina.localizacao);
         if(coords){
-          L.marker(coords, { icon: iconDefault }).addTo(this.map).bindPopup(`<b>${maquina.nome}</b><br>Status: ${maquina.status}`);
+          L.marker(coords, { icon: iconDefault }).addTo(this.map).bindPopup(`<b>${maquina.nome}</b><br>Status: ${this.formatarStatus(maquina.status)}`);
         }
       }
     })
+  }
+
+  private formatarStatus(status: string): string {
+    let statusFormatado: string = '';
+
+    switch(status){
+      case 'desligada': {
+        statusFormatado = 'Desligada';
+        break;
+      }
+      case 'manutencao': {
+        statusFormatado = 'Em Manutenção';
+        break;
+      }
+      case 'operando': {
+        statusFormatado = 'Operando';
+        break;
+      }
+    }
+
+    return statusFormatado;
   }
 
   private parseCoordenadas(localizacao: string): L.LatLngExpression | null {
