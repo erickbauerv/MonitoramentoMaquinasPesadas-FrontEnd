@@ -5,6 +5,7 @@ import { MaquinaService } from '../../services/maquina/maquina.service';
 import { Maquina } from '../../shared/models/maquina.model';
 import { FormsModule } from '@angular/forms';
 import { MaquinaUpdateDto } from '../../shared/dto/maquinaUpdate.dto';
+import { ValidacoesService } from '../../services/validacoes/validacoes.service';
 
 @Component({
   selector: 'app-detalhes-maquina',
@@ -16,11 +17,13 @@ export class DetalhesMaquinaComponent {
   maquina: Maquina = { id: 0, nome: '', localizacao: '', status: 'desligada'};
   maquinaOriginal: Maquina = { id: 0, nome: '', localizacao: '', status: 'desligada'};
   erroLocalizacao: string = '';
+  erroNome: string = '';
   editMode = false;
 
   constructor(
     private route: ActivatedRoute,
-    private maquinaService: MaquinaService
+    private maquinaService: MaquinaService,
+    private validacoesService: ValidacoesService
   ){}
 
   ngOnInit(): void {
@@ -72,25 +75,11 @@ export class DetalhesMaquinaComponent {
   }
 
   validarLocalizacao(): void {
-    this.erroLocalizacao = '';
-    
-    if (!this.maquina.localizacao) {
-      return;
-    }
+    this.erroLocalizacao = this.validacoesService.validarLocalizacao(this.maquina.localizacao);
+  }
 
-    const regex = /^-?\d{1,3}\.\d{1,6},\s*-?\d{1,3}\.\d{1,6}$/;
-    
-    if (!regex.test(this.maquina.localizacao)) {
-      this.erroLocalizacao = 'Formato inválido. Use: -12.345678, -34.567890';
-      return;
-    }
-
-    const [latStr, lngStr] = this.maquina.localizacao.split(',').map(s => s.trim());
-    const lat = parseFloat(latStr);
-    const lng = parseFloat(lngStr);
-
-    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
-      this.erroLocalizacao = 'Valores inválidos. Latitude (-90 a 90) e Longitude (-180 a 180)';
-    }
+  validarNome(): void {
+    this.erroNome = this.validacoesService.validarNome(this.maquina.nome);
+    this.erroNome = '';
   }
 }

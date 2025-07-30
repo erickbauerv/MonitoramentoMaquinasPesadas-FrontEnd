@@ -12,7 +12,12 @@
           [(ngModel)]="novaMaquina.nome" 
           name="nome"
           placeholder="Ex: Escavadeira Hidráulica"
-          required>
+          required
+          (blur)="validarNome()">
+
+          <div *ngIf="erroNome" class="error-message">
+            {{ erroNome }}
+          </div>
       </div>
       
       <div class="form-group">
