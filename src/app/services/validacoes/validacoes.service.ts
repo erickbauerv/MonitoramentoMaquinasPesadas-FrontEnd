@@ -15,7 +15,7 @@ export class ValidacoesService {
       return erroLocalizacao;
     }
 
-    const regex = /^-?\d{1,3}\.\d{1,6},\s*-?\d{1,3}\.\d{1,6}$/;
+    const regex = /^-?\d{1,3}\.\d{1,20},\s*-?\d{1,3}\.\d{1,20}$/;
     
     if (!regex.test(localizacao)) {
       erroLocalizacao = 'Formato inválido. Use: -12.345678, -34.567890';
