@@ -58,7 +58,7 @@ export class MapaComponent implements AfterViewInit {
       if(maquina.localizacao) {
         const coords = this.parseCoordenadas(maquina.localizacao);
         if(coords){
-          const markers = L.marker(coords, { icon: iconDefault }).addTo(this.map).bindPopup(`<b>${maquina.nome}</b><br>Status: ${maquina.status}`);
+          L.marker(coords, { icon: iconDefault }).addTo(this.map).bindPopup(`<b>${maquina.nome}</b><br>Status: ${maquina.status}`);
         }
       }
     })
