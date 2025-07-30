@@ -1,59 +1,23 @@
-# Frontend
+### Sobre o projeto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+O projeto foi desenvolvido como parte do processo seletivo da Concert Technologies, o objetivo do projeto é desenvolver um sistema de monitoramento de máquinas pesadas utilizando telemetria, o front-end da aplicação foi desenvolvido com TypeScript e Angular, consumindo a API em https://github.com/erickbauerv/MonitoramentoDeMaquinasPesadas-backend.
 
-## Development server
+### Funcionalidades
 
-To start a local development server, run:
+O projeto consiste em um dashboard onde podem ser visualizadas as informações de Nome, Localização e Status das máquinas cadastradas, com a opção de filtrar por status e visualizar mais detalhes sobre cada máquina. No topo do dashboard são exibidos os botões de navegação para o mapa interativo exibindo a localização de cada máquina no mapa mundi e a opção de cadastrar novas máquinas.
 
-```bash
-ng serve
-```
+Na tela de cadastro de máquina é exibido um formulário para que o usuário preencha os campos de Nome, Localização e Status, com validações para que todos os valores sejam preenchidos corretamente.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Na tela de mais detalhes diferente do dashboard também é exibido o id da máquina e a opção de editar a localização e o status, com as mesmas validações da tela de cadastro.
 
-## Code scaffolding
+Na tela de mapa interativo é exibido um mapa mundi com ícones marcando onde as máquinas estão de acordo com a localização preenchida no cadastro ou na edição, ao clicar no ícone é exibido um popup com o nome é status da máquina.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Instalação do projeto
 
-```bash
-ng generate component component-name
-```
+1 - Clonar o repositório com `git clone https://github.com/erickbauerv/MonitoramentoMaquinasPesadas-FrontEnd.git`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2 - Na pasta do projeto rodar o comando `npm install` para instalar as dependências do projeto
 
-```bash
-ng generate --help
-```
+3 - Para rodar a aplicação utilizar o comando `ng serve` ou `ng serve —open` para abrir direto no navegador
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4 - A aplicação estará disponível em  [http://localhost:4200](http://localhost:4200/)
