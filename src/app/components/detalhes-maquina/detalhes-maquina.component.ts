@@ -77,9 +77,4 @@ export class DetalhesMaquinaComponent {
   validarLocalizacao(): void {
     this.erroLocalizacao = this.validacoesService.validarLocalizacao(this.maquina.localizacao);
   }
-
-  validarNome(): void {
-    this.erroNome = this.validacoesService.validarNome(this.maquina.nome);
-    this.erroNome = '';
-  }
 }
